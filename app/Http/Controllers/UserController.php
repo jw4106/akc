@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $services = \App\Service::all();
         $data = $data = $request->json()->all();
-        return view('searchresult', ['services' => $data, 'distance' => $request->input('distance'), 'search' => $request->input('search'), 'lat' => $request->input('lat'), 'long' => $request->input('long')]);
+        return view('searchresult', ['services' => $services, 'distance' => $request->input('distance'), 'search' => $request->input('search'), 'lat' => $request->input('lat'), 'long' => $request->input('long')]);
     }
 
     public function displaySearchPost(Request $request)

@@ -2,6 +2,8 @@
  - I had very limited time to work on this
  - Was able to set up the DB and blades and POST requests 
  - able to implement lat/long for google API
+ - implement a distance formula (thank you stack overflow) 
+ - set up routes for POST/GET
 
 ##Stack
 

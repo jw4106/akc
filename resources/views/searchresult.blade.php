@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -116,6 +116,7 @@
                             <th>Title</th>
                             <th>Description</th>
                             <th>State</th>
+                            <th>Distance</th>
                         </tr>
                         @foreach ($services as $service)
                             <tr>
@@ -123,6 +124,7 @@
                                 <td>{{ $service->title }}</td>
                                 <td>{{ $service->description }}</td>
                                 <td>{{ $service->state }}</td>
+                                <td>{{ $service->lat }}</td>
                             </tr>
                         @endforeach
                     </table>

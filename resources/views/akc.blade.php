@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -128,17 +128,17 @@ $(document).ready(function() {
         e.preventDefault;
         var search = $('#search').val();
         var distance = $('#distance').val();
+        $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content') } });
         $.ajax({
             type: "POST",
             url: "/search",
-            data:{ search: search, distance:distance, lat: 43.183941, long: -87.905029, _token: '{{csrf_token()}}' },
-            contentType: "json",
-            processData: false,
+            data:{ search: search, distance:distance, lat: 43.183941, long: -87.905029 },
+            dataType : "json",
             success: function(data){
                 console.log(data); 
             },
-            error: function() {
-                console.log('request failed');
+            error: function(error) {
+                console.log(error);
             }
         });
     });

@@ -1,3 +1,8 @@
+##Notes
+ - I had very limited time to work on this
+ - Was able to set up the DB and blades and POST requests 
+ - able to implement lat/long for google API
+
 ##Stack
 
  - Laravel (Artisan)
